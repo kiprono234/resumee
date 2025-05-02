@@ -1,0 +1,54 @@
+.view-resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .view-resume-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .resume-photo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .resume-photo-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  .resume-details {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .resume-details p {
+    margin: 10px 0;
+  }
+  .download-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }
