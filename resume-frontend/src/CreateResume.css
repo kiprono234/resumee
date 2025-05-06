@@ -1,146 +1,124 @@
 
+/* Main Container */
 .create-resume-container {
-    max-width: 800px;
-    margin: 20px auto; /* Center container with spacing around */
-    padding: 30px;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh; /* Ensure full viewport height */
-    overflow-y: auto; /* Enable scrolling if content overflows */
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-  }
-  
-  /* Heading style with emphasis and clear hierarchy */
-  .create-resume-heading {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 32px;
-    font-weight: 600;
-    color: #333;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-  }
-  
-  /* Form container with vertical layout and spacing */
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #333;
+}
+
+/* Form Heading */
+.create-resume-heading {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Form Section */
+.create-resume-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  gap: 20px;
+}
+
+/* Full-Width Row */
+.form-row-full {
+  grid-column: span 2; /* Spans both columns */
+}
+
+/* Individual Form Row */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-row label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f9f9f9;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #007bff;
+  background: #ffffff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Photo Upload */
+.photo-preview-container {
+  text-align: center;
+  grid-column: span 2; /* Spans both columns */
+}
+
+.photo-preview {
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  grid-column: span 2; /* Spans both columns */
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+button[type="button"] {
+  background: #f0f0f0;
+  color: #555;
+}
+
+button[type="button"]:hover {
+  background: #e0e0e0;
+}
+
+@media (max-width: 768px) {
   .create-resume-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Consistent spacing between sections */
+    grid-template-columns: 1fr; /* Single column layout for small screens */
   }
-  
-  /* Section headers with distinctive color and spacing */
-  .create-resume-section {
-    margin-bottom: 25px;
-  }
-  
-  .section-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #007BFF; /* Bright blue for emphasis */
-    font-weight: 600;
-    border-bottom: 2px solid #007BFF33; /* Light underline for separation */
-    padding-bottom: 4px;
-  }
-  
-  /* Input fields with focus effects for accessibility */
-  .input-field,
-  .textarea-field {
-    padding: 12px 15px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    background-color: #fff;
-  }
-  
-  /* Hover and focus states to improve UX */
-  .input-field:hover,
-  .input-field:focus,
-  .textarea-field:hover,
-  .textarea-field:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
-    outline: none;
-  }
-  
-  /* Specific styling for photo upload input */
-  .photo-upload-input {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  /* Photo preview styling for visual clarity */
-  .photo-preview {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .photo-preview-image {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-    border: 1px solid #ddd;
-  }
-  
-  /* Primary button styling for actions */
-  .submit-button {
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: #fff;
-    font-weight: 600;
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  
-  .submit-button:hover,
-  .submit-button:focus {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    outline: none;
-  }
-  
-  /* Secondary button styling for navigation/back actions */
-  .back-button {
-    margin-top: 10px;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: none;
-    background-color: #6c757d;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-  }
-  
-  .back-button:hover,
-  .back-button:focus {
-    background-color: #5a6268;
-    transform: translateY(-1px);
-    outline: none;
-  }
-  
-  /* Responsive adjustments for smaller screens */
-  @media (max-width: 600px) {
-    .create-resume-heading {
-      font-size: 24px;
-    }
-    .section-title {
-      font-size: 18px;
-    }
-    .submit-button {
-      font-size: 16px;
-    }
-  }
+}
